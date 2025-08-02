@@ -17,14 +17,11 @@ class CommentController extends Controller
         $comment = new Comment();
         $comment->post_id = $request->post_id;
         $comment->user_id = auth()->id();
-    $comment->comment_text = $request->comment_text;
+        $comment->comment_text = $request->comment_text;
         $comment->save();
-
-        // Load the user relation for the comment
         $comment->load('user');
 
         if ($request->ajax()) {
-            // Return JSON response with new comment data
             return response()->json([
                 'id' => $comment->id,
                 'user_name' => $comment->user ? $comment->user->name : 'Anonymous',
@@ -33,7 +30,6 @@ class CommentController extends Controller
             ]);
         }
 
-        // For normal requests, redirect back
         return redirect()->back()->with('success', 'Comment added!');
     }
 }
