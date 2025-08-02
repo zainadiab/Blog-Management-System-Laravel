@@ -11,7 +11,7 @@ A simple Laravel project demonstrating manual Role-Based Access Control (RBAC) w
 
 - PHP >= 8.3.6
 - Composer  
-- MySQL (or TablePlus)  
+- MySQL
 - Laravel Framework 12.21.0
 
 ---
