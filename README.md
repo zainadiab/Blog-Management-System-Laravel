@@ -87,8 +87,7 @@ Seeded users (created by the seeder), both use password: `password`:
 - `app/Http/Middleware/RoleMiddleware.php` — Middleware for role-based access control  
 - `routes/web.php` — Web routes for posts, comments, authentication, and AJAX endpoints  
 - `database/seeders/` — Seeders for users, posts, comments with roles and sample data  
-- `resources/views/` — Blade views for UI, including post listing with pagination/search, post details with AJAX comments, 
-    and auth forms  
+- `resources/views/posts` — Blade views for UI, including post listing with pagination/search, post details with AJAX comments, edit post, add new post and auth forms.
 
 ---
 
