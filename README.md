@@ -31,13 +31,15 @@ A simple Laravel project demonstrating manual Role-Based Access Control (RBAC) w
 
     cp .env.example .env
 
+    Make sure in `.env` file that `SESSION_DRIVER=file` instead of session
+
 4. Generate the application key:
 
     php artisan key:generate
 
 5. Configure the database:
 
-    Open the `.env` file and update these values to match your local MySQL setup:
+    5.1. Open the `.env` file and update these values to match your local MySQL setup:
 
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -45,6 +47,13 @@ A simple Laravel project demonstrating manual Role-Based Access Control (RBAC) w
     DB_DATABASE=blog_db
     DB_USERNAME=root
     DB_PASSWORD=
+
+    5.2. Ensure you have a MySQL user account with proper privileges:
+        mysql -u root -p
+        CREATE DATABASE blog_db;
+        GRANT ALL PRIVILEGES ON blog_db.* TO 'root'@'localhost';
+        FLUSH PRIVILEGES;
+        EXIT;
 
  Make sure the database `blog_db` exists in your MySQL before continuing.
 
